@@ -31,10 +31,22 @@ movieSearchForm.addEventListener('submit', (event) =>{
 
     event.preventDefault();
     const FormBTN = document.querySelector('#submitBtn');
-   const userSearchQuery = event.target.userMovieText.value;
-
+    const userSearchQuery = event.target.userMovieText.value;
+    
     console.log(userSearchQuery);
-
-
-
+    
+    fetchMovie(userSearchQuery)
+    
 })
+
+
+function fetchMovie(userSearchQuery){
+    
+    fetch(`http://www.omdbapi.com/?t=${userSearchQuery}&apikey=${OMDB_KEY}`)
+    .then(resp => resp.json())
+    .then( movieList => {
+        console.log(movieList);
+        
+        renderMovie(movieList)
+    }) 
+}
