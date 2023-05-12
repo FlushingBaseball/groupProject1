@@ -29,10 +29,11 @@ function renderMovie(movieList){
 
 movieSearchForm.addEventListener('submit', (event) =>{
 
-
+    event.preventDefault();
     const FormBTN = document.querySelector('#submitBtn');
-    userMovieText
+   const userSearchQuery = event.target.userMovieText.value;
 
+    console.log(userSearchQuery);
 
 
 
