@@ -1,4 +1,4 @@
-# goupProject1
+# groupProject1
 
 Tenative idea is to make Movie posters display based on a query to the open movie database API
 
