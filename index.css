@@ -4,8 +4,26 @@ color: blue;
 
 }
 
-#Movie-Display-Area {
 
+
+
+
+#title-area {
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, italic;
+    font-weight: lighter;
+    font-size: larger;
+
+}
+
+
+
+
+
+
+
+#Movie-Display-Area {
+    
     flex-wrap: wrap;
 
 }
@@ -18,4 +36,12 @@ color: blue;
 
 #Movie-Display-Area img:hover {
     filter: drop-shadow(0 0 0.75rem black)
+}
+
+
+#submitBtn {
+
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
 }
