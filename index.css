@@ -31,7 +31,7 @@ color: blue;
   #Movie-Display-Area img {
     width: 200px;
     height: auto;
-    margin: 7px;
+    margin: 7px;                
 }
 
 #Movie-Display-Area img:hover {
