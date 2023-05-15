@@ -1,35 +1,67 @@
-h1{
+ 
+ 
+ /* just the background styling for the whole page, it's the color*/
+ 
+ body{
+background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    }
 
-color: blue;
 
+
+
+/* The temp title styling*/
+
+#title{
+display: inline-block;
+width: 20%;
+color: rgb(255, 72, 0);
+font-weight: bold;
+font-style: italic;
+font-family: fantasy;
 }
 
 
 
+/*  The Submission area styling (or lack there of lol)                        */
 
 
-#title-area {
+#movieSubmitArea{
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, italic;
-    font-weight: lighter;
-    font-size: larger;
+    display: inline-block;
+    width: 75%;
+    
+ }
+ 
+ 
+ 
+ 
+ #movieSubmitBtn {
+ 
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+ 
+ }
+ 
+ #movieSubmitLogo{
+     float: left;
+     width: 50px;
+     height: auto;
+     margin: 3px;
+ }
 
-}
 
 
 
-
-
+/* css for the requested movies: they will reach the end of the screen and wrap to a new line */
 
 
 #Movie-Display-Area {
-    
+    display: block;
     flex-wrap: wrap;
-
 }
 
   #Movie-Display-Area img {
-    width: 200px;
+    width: 150px;
     height: auto;
     margin: 7px;                
 }
@@ -39,9 +71,8 @@ color: blue;
 }
 
 
-#submitBtn {
-
-     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 
-}
+
+/*detail area styling*/ 
+

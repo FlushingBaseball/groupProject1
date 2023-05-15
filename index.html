@@ -10,20 +10,46 @@
     <title>Movie Thing</title>
 </head>
 <body>
-
-    <h1>Movie Clicker...Whatever</h1>
-    <div id="Movie-Display-Area"> 
-        <h4 id="title-area">Place Holder</h4>
-        <p id="plotTextArea">
-
-        </p>
-    </div>
-    <p>
-        Search for a movie
-    </p>
-    <form id="movieSubmit" action="submit">
+    
+    <!--The Title Display as left top block?-->
+    <h1 id="title">Movie Clicker. . . . . .  </h1>
+    
+    
+    
+    <!--The area that includes the search bar logo and the btn to submit the data to make the fetch-->
+    <form id="movieSubmitArea" action="submit">
+        <img id="movieSubmitLogo" src="./logo.png" alt="Movie Logo">
         <input  id="userMovieText" type="text">
-        <button id="submitBtn" >Click to search for movie</button>
+        <button id="movieSubmitBtn" >Click to search for movie</button>
     </form>
+
+
+
+
+
+    <!-- Ideally display as like a left panel or a block on top -->
+    <div id="Movie-Display-Area"> 
+        
+    </div>
+    
+    <!--On click I would like the details to display here-->
+    <span id="detail Area">
+        <img id="detailPicture" src="" alt="">
+        <h3 id="titleHolder"></h3>
+        <p> box office holder</p>
+        <p id="plotTextArea">
+            plot text holder
+        </p>
+
+    </span>
+
+
+    
+    
+
+
+
+
+
 </body>
 </html>
