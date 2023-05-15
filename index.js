@@ -1,11 +1,17 @@
-const MovieDisplayArea = document.querySelector('#Movie-Display-Area');
+const MovieDisplayArea = document.querySelector('#Movie-Display-Area');     //area which new movies will display
 
 
 
-const TitleAreaDisplay = document.querySelector('#title-area');
+
+
+const TitleAreaDisplay = document.querySelector('#title-area');  
 const movieSearchForm = document.querySelector(`#movieSubmitArea`);
 
+
+
+
 const detailPicArea = document.querySelector(`#detailPicture`);
+const titleHolderHeader = document.querySelector('#titleHolder');
 const plotTextArea = document.querySelector(`#plotTextArea`)
 
 
@@ -29,11 +35,13 @@ function renderMovie(movieList){
     
     
     const newIMG = document.createElement('img'); //make a new image element
+
     newIMG.src= movieList.Poster; //set the src to the movies new image
     MovieDisplayArea.appendChild(newIMG) //add the area to the DOM
 
     newIMG.addEventListener('click', (event) => {
         console.log('hey I was clicked');
+        titleHolderHeader.textContent = movieList.Title;
         detailPicArea.src = movieList.Poster;
         plotTextArea.textContent = movieList.Plot;
 
@@ -64,7 +72,7 @@ function fetchMovie(userSearchQuery){
     fetch(`http://www.omdbapi.com/?t=${userSearchQuery}&apikey=${OMDB_KEY}`)
     .then(resp => resp.json())
     .then( movieList => {
-        // console.log(movieList);
+        console.log(movieList);
         // console.log(movieList.ok)
         renderMovie(movieList)
   }) 
