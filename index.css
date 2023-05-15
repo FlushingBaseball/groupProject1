@@ -1,6 +1,15 @@
+ 
+ 
+ /* just the background styling for the whole page, it's the color*/
+ 
  body{
 background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
     }
+
+
+
+
+/* The temp title styling*/
 
 #title{
 display: inline-block;
@@ -13,7 +22,7 @@ font-family: fantasy;
 
 
 
-
+/*  The Submission area styling (or lack there of lol)                        */
 
 
 #movieSubmitArea{
@@ -43,7 +52,7 @@ font-family: fantasy;
 
 
 
-
+/* css for the requested movies: they will reach the end of the screen and wrap to a new line */
 
 
 #Movie-Display-Area {
@@ -68,29 +77,4 @@ font-family: fantasy;
 
 
 
-/*
-#title-area {
-    background-color: darkorange;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, italic;
-    font-weight: lighter;
-    font-size: larger;
 
-}
-
-
-
-
-#plotTextArea{
-    float: inline-end;
-    background-color: blanchedalmond;
-    text-align: center;
-}
-
-
-
-
-
-
-
-
- */
