@@ -10,8 +10,19 @@ Tenative idea is to make Movie posters display based on a query to the open movi
 
 on click it populates feilds with the movies name, description and other stuff to be chosen
 
+
+
+
+# Goals
+
+    The other groups are going to have quite alot of functionality
+
+    1. Implement sorting
+    2. Login 
+    3. user favorites
+
 # STRETCH GOAL
 
-On click of the poster it asks chat GPT for a summary and populates a feild with the returned response 
+?????
 
 
