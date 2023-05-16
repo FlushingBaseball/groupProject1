@@ -17,7 +17,7 @@ const boxOfficeDetailDisplay = document.querySelector('#boxOfficeHolder');
 
 
 const movieArray =[];
-
+let sortedMovies =[];
 
 
 
@@ -84,12 +84,40 @@ function fetchMovie(userSearchQuery){
 
 
 
-const boxOfficeOption = document.querySelector('#sortBoxOffice')
-boxOfficeOption.addEventListener(`click`, (event) =>{
-    console.log(`an option was clicked`)
-})
-// sortByIMDBRating
-// sortByMetaScore
+const boxOfficeOption = document.querySelector('#sortMenu')
+boxOfficeOption.addEventListener("change", (event) =>{
+    
+    if (event.target.value == 'sortBoxOffice' ){
+
+         sortedMovies = movieArray.sort((a, b) => b.BoxOffice - a.BoxOffice);
+        console.log(sortedMovies);
+
+        
+    }
+    if (event.target.value == 'sortYear' ){
+
+         sortedMovies = movieArray.sort((a, b) => b.Year - a.Year);
+        console.log(sortedMovies);
+
+        
+    }
+    if (event.target.value == 'sortByIMDBRating' ){
+
+         sortedMovies = movieArray.sort((a, b) => b.BoxOffice - a.BoxOffice);
+        console.log(sortedMovies);
+
+        
+    }
+    if (event.target.value == 'sortByMetaScore' ){
+
+         sortedMovies = movieArray.sort((a, b) => b.imdbRating - a.imdbRating);
+        console.log(sortedMovies)
+        
+    }
+ 
+        
+});
+
 
 
 
