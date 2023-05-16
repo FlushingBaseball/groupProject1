@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./API_KEYS.js"></script>
-    <script defer src="./index.js"></script>
-    <link rel="stylesheet" href="./index.css">
-    <title>Movie Thing</title>
-</head>
-<body>
-    
-    <!--The Title Display as left top block?-->
-    <h1 id="title">Movie Clicker. . . . . .  </h1>
-    
-    
-    
-    <!--The area that includes the search bar logo and the btn to submit the data to make the fetch-->
-    <form id="movieSubmitArea" action="submit">
-        <img id="movieSubmitLogo" src="./logo.png" alt="Movie Logo">
-        <input  id="userMovieText" type="text">
-        <button id="movieSubmitBtn" >Click to search for movie</button>
-    </form>
-
-
-
-
-
-    <!-- Ideally display as like a left panel or a block on top -->
-    <div id="Movie-Display-Area"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script defer src="./API_KEYS.js"></script>
+        <script defer src="./index.js"></script>
+        <link rel="stylesheet" href="./index.css">
+        <title>Movie Thing</title>
+    </head>
+    <body>
         
-    </div>
-    
-    <!--On click I would like the details to display here-->
-    <span id="detail Area">
-        <img id="detailPicture" src="" alt="">
-        <h3 id="titleHolder"></h3>
-        <p> box office holder</p>
-        <p id="plotTextArea">
-            plot text holder
-        </p>
+        <!--The Title Display as left top block?-->
+        <h1 id="title">Movie Clicker. . . . . .  </h1>
+        
+        
+        
+        <!--The area that includes the search bar logo and the btn to submit the data to make the fetch-->
+        <form id="movieSubmitArea" action="submit">
+            <img id="movieSubmitLogo" src="./logo.png" alt="Movie Logo">
+            <input  id="userMovieText" type="text">
+            <button id="movieSubmitBtn" >Click to search for movie</button>
+        </form>
+        
+        
+        
+        
+        
+        <!-- Ideally display as like a left panel or a block on top -->
+        <div id="Movie-Display-Area"> 
+            
+        </div>
+        
+        <!--On click I would like the details to display here-->
+        <span id="detail Area">
+            <img id="detailPicture" src="" alt="">
+            <h3 id="titleHolder"></h3>
+            <p id="boxOfficeHolder"> box office holder</p>
+            <p id="plotTextArea">
+                plot text holder
+            </p>
+            
+        </span>
 
-    </span>
+        
+        <label for="sortMenu">Reorder your movies:</label>
 
-
-    
-    
-
-
-
-
-
-</body>
+        <select name="sortMenu" id="sortMenu">
+            <option id="sortBoxOffice" value="sortBoxOffice">Sort by Box Office</option>
+            <option id="sortYear" value="sortYear">Sort by Year</option>
+            <option id="sortByIMDBRating" value="sortByIMDBRating">Sort by Rating</option>
+            <option id="sortByMetaScore" value="sortByMetaScore">Sort by Meta Score</option>
+        </select>
+        
+        
+    </body>
 </html>

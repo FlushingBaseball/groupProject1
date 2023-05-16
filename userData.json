@@ -1,0 +1,34 @@
+{
+    "users": [
+    
+        {
+          "username": "SlammingSam",
+          "avi": "./userPhotos/smile.jpg",
+          "password": "123abc",
+          "favortieMovies": [],
+          "Watched Movies": []
+        },
+        {
+          "username": "JumpingJack",
+          "avi": "./userPhotos/nyan.jpg",
+          "password": "gary17",
+          "favortieMovies": [],
+          "Watched Movies": []
+        },
+        {
+          "username": "LaughingLarry",
+          "avi": "./userPhotos/grumpyCat.jpg",
+          "password": "pizza70",
+          "favortieMovies": [],
+          "Watched Movies": []
+        }
+    
+
+      ]
+
+
+
+
+
+
+}
