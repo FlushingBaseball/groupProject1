@@ -26,7 +26,7 @@ font-family: fantasy;
 
 
 #movieSubmitArea{
-
+    position: fixed;
     display: inline-block;
     width: 75%;
     

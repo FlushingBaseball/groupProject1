@@ -10,19 +10,20 @@ Tenative idea is to make Movie posters display based on a query to the open movi
 
 on click it populates feilds with the movies name, description and other stuff to be chosen
 
-
+s
 
 
 # Goals
 
     The other groups are going to have quite alot of functionality
 
-    1. Implement sorting
-    2. Login 
-    3. user favorites
+    1. Implement sorting (DONE)
+    2. Login (IN PROGRESS)
+    3. user favorites (NOT STARTED)
 
 # STRETCH GOAL
 
-?????
+    CSS follow the plan, maybe another page with another API
+    save a few trailers locally to demo a trailer feature?
 
 
