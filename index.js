@@ -85,16 +85,25 @@ function fetchMovie(userSearchQuery){
 
 
 
+
+
 const boxOfficeOption = document.querySelector('#sortMenu')
 boxOfficeOption.addEventListener("change", (event) =>{
     
-    if (event.target.value == 'sortBoxOffice' ){
-        
+     removeAllChildNodes(MovieDisplayArea);
+     
+     if (event.target.value == 'sortBoxOffice' ){
+        console.log("whoooooo");
+        movieArray.forEach(movie =>{ movie.BoxOffice = movie.BoxOffice.replaceAll(/[$,]/g,"")
+    
+                                    })
+
         sortedMovies = movieArray.sort((a, b) => Number(b.BoxOffice) - Number(a.BoxOffice));
         console.log(sortedMovies);
-        
-        
+        renderSortedMovies(sortedMovies)
+    
     }
+
     if (event.target.value == 'sortYear' ){
         sortedMovies = movieArray.sort((a, b) => Number(b.Year) - Number(a.Year));
         console.log(sortedMovies);
@@ -102,17 +111,20 @@ boxOfficeOption.addEventListener("change", (event) =>{
         
         
     }
+    
     if (event.target.value == 'sortByIMDBRating' ){
-
-        sortedMovies = movieArray.sort((a, b) => Number(b.BoxOffice) - Number(a.BoxOffice));
+        
+        sortedMovies = movieArray.sort((a, b) => Number(b.imdbRating) - Number(a.imdbRating));
         console.log(sortedMovies);
+        renderSortedMovies(sortedMovies)
         
         
     }
     if (event.target.value == 'sortByMetaScore' ){
         
-        sortedMovies = movieArray.sort((a, b) => Number(b.imdbRating) - Number(a.imdbRating));
+        sortedMovies = movieArray.sort((a, b) => Number(b.Metascore) - Number(a.Metascore));
         console.log(sortedMovies)
+        renderSortedMovies(sortedMovies)
         
     }
     
@@ -120,36 +132,32 @@ boxOfficeOption.addEventListener("change", (event) =>{
 });
 
 
-
+//sorts the movies we've already red in:
+// known issue: if a feild is NA it's pulled to the top
+//known issue: if a movie is not found the empty object returned is still inserted
 function renderSortedMovies(sortedMovieArray){    
-    removeAllChildNodes(MovieDisplayArea);
     
-
- sortedMovieArray.forEach( movie =>{
-
-
-
-     let newReIMG = document.createElement('img'); //make a new image element
+    
+    sortedMovieArray.forEach( movie =>{
+        
+        
+        
+        let newReIMG = document.createElement('img'); //make a new image element
+        
+        newReIMG.src= movie.Poster; //set the src to the movies new image
+        MovieDisplayArea.appendChild(newReIMG) //add the area to the DOM
      
-     newReIMG.src= movieList.Poster; //set the src to the movies new image
-     MovieDisplayArea.appendChild(newReIMG) //add the area to the DOM
-     
-     newIReMG.addEventListener('click', (event) => {
-         console.log('hey I was clicked');
-         titleHolderHeader.textContent = movieList.Title;
-         detailPicArea.src = movieList.Poster;
-         plotTextArea.textContent = movieList.Plot;
-         boxOfficeDetailDisplay.textContent = `Total Box Office ${movieList.BoxOffice}`;
-         
-     })
-
- })
+        newReIMG.addEventListener('click', (event) => {
+            console.log('hey I was clicked');
+            titleHolderHeader.textContent = movie.Title;
+            detailPicArea.src = movie.Poster;
+            plotTextArea.textContent = movie.Plot;
+            boxOfficeDetailDisplay.textContent = `Total Box Office ${movie.BoxOffice}`;
+            
+        })
+        
+    })
 }
-
-
-
-
-
 
 
 
@@ -162,8 +170,3 @@ function removeAllChildNodes(MovieDisplayArea) {
         MovieDisplayArea.removeChild(MovieDisplayArea.firstChild);
     }
 }
-
-
-
-
-
