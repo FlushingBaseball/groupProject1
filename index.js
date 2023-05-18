@@ -14,6 +14,7 @@ const detailPicArea = document.querySelector(`#detailPicture`);
 const titleHolderHeader = document.querySelector('#titleHolder');
 const plotTextArea = document.querySelector(`#plotTextArea`);
 const boxOfficeDetailDisplay = document.querySelector('#boxOfficeHolder');
+const gptTextArea = document.querySelector('#gptTextArea')
 
 
 const movieArray =[];
@@ -44,9 +45,9 @@ function renderMovie(movieList){
         console.log('hey I was clicked');
         titleHolderHeader.textContent = movieList.Title;
         detailPicArea.src = movieList.Poster;
-        plotTextArea.textContent = movieList.Plot;
-        boxOfficeDetailDisplay.textContent = `Total Box Office ${movieList.BoxOffice}`;
-        
+        plotTextArea.textContent = `Movie Plot: ${movieList.Plot}`;
+        boxOfficeDetailDisplay.textContent = `Total Box Office: ${movieList.BoxOffice}`;
+        rewriteText(movieList);
     })
 }
 
@@ -170,3 +171,33 @@ function removeAllChildNodes(MovieDisplayArea) {
         MovieDisplayArea.removeChild(MovieDisplayArea.firstChild);
     }
 }
+
+
+
+
+// Generate rewritten movie description using openai API (GPT 3.5 model)
+async function rewriteText(movieList) {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-3.5-turbo',
+        messages: [{role: "user", content: `Rewrite the following as Shakespeare: ${movieList.Plot} Be concise.`}],
+        max_tokens: 60
+      })
+    })
+  
+    // Throw error message if POST request fails
+    if (!response.ok) {
+      const message = `An error has occured: ${response.status}`;
+      throw new Error(message);
+    }
+  
+    // Display rewritten movie description on page
+    const data = await response.json();
+    gptTextArea.textContent = `Shakespearean Movie Plot: ${data.choices[0].message.content}`;
+    console.log(data.choices[0].message.content);
+  }
