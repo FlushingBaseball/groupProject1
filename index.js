@@ -152,7 +152,7 @@ function renderSortedMovies(sortedMovieArray){
             titleHolderHeader.textContent = movie.Title;
             detailPicArea.src = movie.Poster;
             plotTextArea.textContent = movie.Plot;
-            boxOfficeDetailDisplay.textContent = `Total Box Office ${movie.BoxOffice}`;
+            boxOfficeDetailDisplay.textContent = `Total Box Office $${movie.BoxOffice}`;
             
         })
         
