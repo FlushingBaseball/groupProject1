@@ -15,7 +15,14 @@ const titleHolderHeader = document.querySelector('#titleHolder');
 const plotTextArea = document.querySelector(`#plotTextArea`)
 
 
-
+//Work on a poll and make sure that data gets saved to a file using POST method.
+// work on mouse over or hover. when your mouse hovers over the image of a movie, display name and plot.
+const poll = {
+    question: 'How did you hear about us?'
+    answers: [ 
+        "Family", "Friends", "Email", "Other", 
+    ]
+}
 
 
 
