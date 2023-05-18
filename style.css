@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  padding: 2em;
+}
+
+div.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+}
+
+.comments-container {
+  border: solid black 2px;
+  padding: 0.5em;
+}
+
+div.background-black-square {
+  background: black;
+  color: white;
+  margin-right: 0.5em;
+  padding: 0.25em;
+}
+
+div.column.background-black-square span {
+  font-size: 0.5em;
+}
+
+.sub-title {
+  font-size: 0.5em;
+}
+
+#main-title {
+  display: flex;
+  font-size: 2em;
+  border-top: solid black 2px;
+  border-bottom: solid black 2px;
+  padding: 0.5em 0 0.5em 0;
+}
+
+#exhibit-image {
+  width: 100%;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+}
+
+#tickets-bought {
+  font-size: 0.9em;
+}
