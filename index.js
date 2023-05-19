@@ -25,7 +25,7 @@ let sortedMovies =[];
 fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${OMDB_KEY}`) //Hard coded populate an Image on start 
 .then(resp => resp.json())
 .then( movieList => {
-    console.log(movieList);
+   // console.log(movieList);
     movieArray.push(movieList)
     
     renderMovie(movieList)
@@ -65,6 +65,10 @@ movieSearchForm.addEventListener('submit', (event) =>{
     console.log(userSearchQuery);
     
     fetchMovie(userSearchQuery)
+
+    //attempt to clear form 
+    movieSearchForm.reset();
+
    // movieSearchTextArea.textcontent = ' ' //reset();
    
 })
@@ -76,11 +80,20 @@ function fetchMovie(userSearchQuery){
     fetch(`http://www.omdbapi.com/?t=${userSearchQuery}&apikey=${OMDB_KEY}`)
     .then(resp => resp.json())
     .then( movieList => {
-        console.log(movieList);
-        // console.log(movieList.ok)
-        movieArray.push(movieList)
-        console.log(`This is the movieArray ${movieArray}`)
-        renderMovie(movieList)
+        if (movieList.Response === 'False'){        //if the movie returns a bad object never render it!
+            alert('Movie not found')
+            return
+        }
+        else{
+
+            console.log(movieList);
+            movieArray.push(movieList)
+            renderMovie(movieList)
+
+
+        }
+
+
     }) 
 }
 
@@ -134,8 +147,6 @@ boxOfficeOption.addEventListener("change", (event) =>{
 
 
 //sorts the movies we've already red in:
-// known issue: if a feild is NA it's pulled to the top
-//known issue: if a movie is not found the empty object returned is still inserted
 function renderSortedMovies(sortedMovieArray){    
     
     
@@ -165,7 +176,7 @@ function renderSortedMovies(sortedMovieArray){
 
 
 
-
+// Nuke the rendered movie area so we can reRender them in the order provided by dropdown change
 function removeAllChildNodes(MovieDisplayArea) {
     while (MovieDisplayArea.firstChild) {
         MovieDisplayArea.removeChild(MovieDisplayArea.firstChild);
