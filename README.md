@@ -7,7 +7,7 @@ The plot of the movie is sent to chat gpt for rewrite in shakespearean  english
 
 
 # Goals
-    0. store movies already red in localy? to cache commonly called data? 
+    0. store movies already read in locally? to cache commonly called data? 
     1. Login (IN PROGRESS)
     2. user favorites (NOT STARTED)
 
